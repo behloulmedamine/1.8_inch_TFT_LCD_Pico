@@ -1,0 +1,46 @@
+name: Build 1.8_inch_TFT
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Cmake
+      uses: lukka/get-cmake@latest
+      with:
+        cmakeVersion: 3.22.1
+        ninjaVersion: 1.11.1
+
+    - name: Install arm-none-eabi-gcc
+      uses: carlosperate/arm-none-eabi-gcc-action@v1
+      
+
+    - name: Create build dir
+      working-directory: .
+      run: >
+        mkdir -p build
+
+    - name: Build configuration
+      working-directory: .
+      run: >
+        cmake
+        ..
+
+    - name: Make!
+      working-directory: .
+      run: >
+        make
+        
+
+    - run: ls -la build/
+
+    - name: Store artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: 1.8_inch_TFT
+        path: build/1.8inch_TFT.uf2
