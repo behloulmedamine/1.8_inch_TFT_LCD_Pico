@@ -26,13 +26,13 @@ jobs:
         mkdir -p build
 
     - name: Build configuration
-      working-directory: .
+      working-directory: build/
       run: >
         cmake
         ..
 
     - name: Make!
-      working-directory: .
+      working-directory: build/
       run: >
         make
         
