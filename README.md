@@ -1,4 +1,4 @@
-# 1.8_inch_TFT_LCD
+# 1.8_inch_TFT_LCD_Pico
 ST7735_TFT_LCD library with an example demo 
 
 # Hardware
