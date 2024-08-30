@@ -9,6 +9,8 @@ ST7735_TFT_LCD library with an example demo
 
 Wiring details in "wiring.h"
 
+![Wiring image](/img/Wiring.png)
+
 # Requirements
 
 install the following package.
